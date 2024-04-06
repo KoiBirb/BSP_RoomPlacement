@@ -5,9 +5,10 @@ import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable{
 
-        public final int tileSize = 8; // size of each cell
-        public final int gridWidth = 150; // width of grid
-        public final int gridHeight = 100; // height of grid
+        public final int tileSize = 16; // size of each cell
+        public final int gridWidth = 16; // width of grid
+        public final int gridHeight = 12; // height of grid
+        public static final int maxWorldSize = 40; // max size of world
 
         public final int screenWidth = tileSize * gridWidth; // game screen width
         public final int screenHeight = tileSize * gridHeight; // game screen height
@@ -17,7 +18,7 @@ public class GamePanel extends JPanel implements Runnable{
         Thread gameThread;
         KeyInput keyInput = new KeyInput(this);
 
-
+        // Setting up screen panel
         public GamePanel(){
             this.setPreferredSize(new Dimension(screenWidth, screenHeight));
             this.setBackground(Color.BLACK);
